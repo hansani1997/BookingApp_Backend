@@ -59,6 +59,7 @@ const storage = multer.diskStorage({
       phoneNumber,
       email,
       password:hashedPassword,
+      image
     });
   
     try {
