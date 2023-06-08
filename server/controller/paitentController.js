@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
         return res.status(400).json({ message: 'Image upload failed' });
       }
   
-      const { name, email, password } = req.body;
+      const { firstName, lastNname,phoneNumber, email, password } = req.body;
       const image = req.file; // The uploaded image file object
   
       let existingUser;
@@ -54,7 +54,9 @@ const storage = multer.diskStorage({
     const hashedPassword = bcrypt.hashSync(password);
   
     const user = new Usermodel({
-      name,
+      firstName,
+      lastNname,
+      phoneNumber,
       email,
       password:hashedPassword,
     });
